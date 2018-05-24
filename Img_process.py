@@ -22,7 +22,7 @@ cv2.drawContours( vis, contours, -1, (128,255,255), 3, 8)
 # Draw the contour with maximum perimeter (omitting the first contour which is outer boundary of image
 # Not necessary in this case
 vis2 = np.zeros((h, w, 3), np.uint8)
-perimeter=[]q
+perimeter=[]
 for cnt in contours[1:]:
     perimeter.append(cv2.arcLength(cnt,True))
 #print perimeter
