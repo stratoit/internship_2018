@@ -1,6 +1,9 @@
 import cv2 as cv2
 import numpy as np
 from matplotlib import pyplot as plt
+from PIL import Image
+import csv
+import time
 
 #Load parameters
 #mtx = np.load('mtx.npy')
@@ -79,7 +82,18 @@ while(True):
 #		    plt.imshow(images[i],'gray')
 #		    plt.title(titles[i]), plt.xticks([]), plt.yticks([])
 #		plt.show()
-		cv2.imwrite("%d.jpg"%count,vis2)
+		img_grey = cv2.cvtColor(vis2,cv2.COLOR_BGR2GRAY)
+		arr = np.asarray(img_grey).reshape((h,w)) #CHECK ORDER OF H AND W
+
+#		value = np.asarray(img_grey.getdata(), dtype=np.int).reshape((img_grey.size[1], img_grey.size[0]))
+		arr = arr.flatten()
+		print(arr)
+		with open("img_pixels.csv", 'a') as f:
+			writer = csv.writer(f)
+			now = time.strftime('%d-%m-%Y %H:%M:%S')
+			writer.writerow([arr,now])
+
+#		cv2.imwrite("%d.jpg"%count,vis2)
 #		Calibration Removed to avoid latency
 #		undistortedImg = cv2.undistort(img,mtx,dist)
 #		cv2.imwrite("H.jpg",undistortedImg)
