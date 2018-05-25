@@ -5,16 +5,6 @@ from PIL import Image
 import csv
 import time
 
-#Load parameters
-#mtx = np.load('mtx.npy')
-#dist = np.load('dist.npy')
-
-### Load one of the test images
-#img = cv2.imread('LANE/lane00.jpg')
-#h1, w1 = img.shape[:2]
-
-## Obtain the new camera matrix and undistort the image
-#newCameraMtx, roi = cv2.getOptimalNewCameraMatrix(mtx, dist, (w1, h1), 1, (w1, h1))
 
 cap = cv2.VideoCapture(0)
 if cap.isOpened()== 0 :
@@ -28,28 +18,6 @@ while(True):
 	frame = cv2.cvtColor(frame1, cv2.COLOR_BGR2GRAY)
 	cv2.imshow('frame',frame)
 	
-#	x, y, w, h = roi
-#	undistortedImg = undistortedImg[y:y + h, x:x + w]
-#	cv2.imshow('undis',undistortedImg)
-#	_, th1 = cv2.threshold(undistortedImg, 100, 255, cv2.THRESH_BINARY);
-#	h, w = undistortedImg.shape[:2]
-#	
-#	# Determine contour of all blobs found
-#	contours0, hierarchy = cv2.findContours( th1.copy(), cv2.RETR_TREE, cv2.CHAIN_APPROX_NONE)
-#	contours = [cv2.approxPolyDP(cnt, 3, True) for cnt in contours0]
-
-#	# Draw all contours
-#	vis = np.zeros((h, w, 3), np.uint8)
-#	cv2.drawContours( vis, contours, -1, (128,255,255), 3, 8)
-#	
-#	# Show all images
-#	titles = ['Original Image','Threshold','Contours', 'Result']
-#	images=[frame, th1, vis, vis2]
-#	for i in xrange(4):
-#	    plt.subplot(2,2,i+1)
-#	    plt.imshow(images[i],'gray')
-#	    plt.title(titles[i]), plt.xticks([]), plt.yticks([])
-#	plt.show()
 
 	key = cv2.waitKey(1) & 0xFF 
  	if key == ord('a') :
@@ -68,24 +36,15 @@ while(True):
 		perimeter=[]
 		for cnt in contours[1:]:
 		    perimeter.append(cv2.arcLength(cnt,True))
-		#print perimeter
+
 		#print max(perimeter)
 		maxindex= perimeter.index(max(perimeter))
-		#print maxindex
 
 		cv2.drawContours( vis2, contours, maxindex +1, (255,0,0), -1)
-		# Show all images
-#		titles = ['Original Image','Threshold','Contours', 'Result']
-#		images=[frame, th1, vis, vis2]
-#		for i in xrange(4):
-#		    plt.subplot(2,2,i+1)
-#		    plt.imshow(images[i],'gray')
-#		    plt.title(titles[i]), plt.xticks([]), plt.yticks([])
-#		plt.show()
+
 		img_grey = cv2.cvtColor(vis2,cv2.COLOR_BGR2GRAY)
 		arr = np.asarray(img_grey).reshape((h,w)) #CHECK ORDER OF H AND W
 
-#		value = np.asarray(img_grey.getdata(), dtype=np.int).reshape((img_grey.size[1], img_grey.size[0]))
 		arr = arr.flatten()
 		print(arr)
 		with open("img_pixels.csv", 'a') as f:
@@ -93,11 +52,7 @@ while(True):
 			now = time.strftime('%d-%m-%Y %H:%M:%S')
 			writer.writerow([arr,now])
 
-#		cv2.imwrite("%d.jpg"%count,vis2)
-#		Calibration Removed to avoid latency
-#		undistortedImg = cv2.undistort(img,mtx,dist)
-#		cv2.imwrite("H.jpg",undistortedImg)
-		
+
 		count += 1
 	elif key == ord('q'):
 		break
