@@ -39,7 +39,7 @@ def WriteListtoCSV(data):
 
 	_, th1 = cv2.threshold(frame, 100, 255, cv2.THRESH_BINARY);
 	h, w = frame.shape[:2]
-	cv2.imshow('result',th1)
+	cv2.imwrite("Latest.jpg",th1)
 
 	arr = np.asarray(th1).reshape((h,w)) #CHECK ORDER OF H AND W
 
@@ -65,6 +65,14 @@ def clientthread(conn):
     #came out of loop
 	conn.close()
  
+def imgthread():
+	while True:
+		_, frame1 = cap.read(0)
+		frame = cv2.cvtColor(frame1, cv2.COLOR_BGR2GRAY)
+
+		_, th1 = cv2.threshold(frame, 100, 255, cv2.THRESH_BINARY);
+		cv2.imshow('result',th1)
+
 #now keep talking with the client
 while 1:
     #wait to accept a connection - blocking call
@@ -73,5 +81,6 @@ while 1:
 
     #start new thread takes 1st argument as a function name to be run, second is the tuple of arguments to the function.
 	start_new_thread(clientthread ,(conn,))
+#	start_new_thread(imgthread,())
  
 s.close()

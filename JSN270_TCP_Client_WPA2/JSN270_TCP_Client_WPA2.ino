@@ -10,7 +10,7 @@
 int out1 = 9;
 int out2 = 10;
 String val1;
-int val;
+int val=0;
 char c;
 
 #define USE_DHCP_IP 15
@@ -46,7 +46,7 @@ void setup() {
         Throttle.attach(10); //Adds ESC to certain pin. arm();
         Steer.attach(9); 
 
-	Serial.println("--------- JSN270 TCP Client with WPA2 Test --------");
+	/*Serial.println("--------- JSN270 TCP Client with WPA2 Test --------");
 
 	// wait for initilization of JSN270
 	delay(5000);
@@ -59,7 +59,7 @@ void setup() {
 	while(JSN270.receive((uint8_t *)&c, 1, 1000) > 0) {
 		Serial.print((char)c);
 	}
-	delay(1000);
+	delay(1000);*/
 
 #if USE_DHCP_IP
 	JSN270.dynamicIP();
@@ -78,7 +78,7 @@ void setup() {
 	}
 	delay(1000);
 
-	JSN270.sendCommand("at+wstat\r");
+	/*JSN270.sendCommand("at+wstat\r");
 	delay(5);
 	while(JSN270.receive((uint8_t *)&c, 1, 1000) > 0) {
 		Serial.print((char)c);
@@ -90,18 +90,18 @@ void setup() {
 	while(JSN270.receive((uint8_t *)&c, 1, 1000) > 0) {
 		Serial.print((char)c);
 	}
-	delay(1000);
+	delay(1000);*/
 
 	if (!JSN270.client(HOST_IP, REMOTE_PORT, PROTOCOL)) {
 		Serial.println("Failed connect to " HOST_IP);
 		Serial.println("Restart System");
 	} else {
 		Serial.println("Socket connect to " HOST_IP);
-		delay(2000);
+		//delay(2000);
 		
 		// Enter data mode
-		JSN270.sendCommand("at+exit\r");
-		delay(5);
+		//JSN270.sendCommand("at+exit\r");
+		//delay(5);
 	}
         JSN270.clear();
 }
@@ -115,7 +115,7 @@ void loop() {
                   val = atoi(val1.c_str());
                   Serial.print(val);
                   Serial.println("");
-                  if(val > 2    00) {
+                  if(val > 200) {
                     setSpeed(val); //Creates variable for speed to be used in in for loop  
                     // runs at 539
                   }
