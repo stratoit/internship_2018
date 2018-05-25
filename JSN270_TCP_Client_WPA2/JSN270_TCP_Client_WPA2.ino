@@ -34,7 +34,7 @@ Servo Throttle, Steer;
 void setSpeed(int speed)
   {
     int angle = map(speed, 0, 1000, 0, 180); //Sets servo positions to different speeds
-    Throttle.write(angle);
+    if (speed < 560){Throttle.write(angle);}
   }
 
 
@@ -115,11 +115,11 @@ void loop() {
                   val = atoi(val1.c_str());
                   Serial.print(val);
                   Serial.println("");
-                  if(val > 200) {
+                  if(val > 500) {
                     setSpeed(val); //Creates variable for speed to be used in in for loop  
                     // runs at 539
                   }
-                  if(val > 10 && val < 190){
+                  if(val > 19 && val < 105){
                     Steer.write(val);
                   }
                 }

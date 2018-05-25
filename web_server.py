@@ -40,15 +40,14 @@ def WriteListtoCSV(data):
 	_, th1 = cv2.threshold(frame, 100, 255, cv2.THRESH_BINARY);
 	h, w = frame.shape[:2]
 	cv2.imwrite("Latest.jpg",th1)
-
+	new_data = [data]
 	arr = np.asarray(th1).reshape((h,w)) #CHECK ORDER OF H AND W
 
 	arr = arr.flatten()
-
+	new_arr = data + arr.tolist()
 	with open ('tesdata.csv','a') as csvfile:
-		writer = csv.writer(csvfile)
-		now = time.strftime('%d-%m-%Y %H:%M:%S')
-		writer.writerow([now,data,arr])
+		writer = csv.writer(csvfile,delimiter=",")
+		writer.writerows(new_arr) #check
 
 #Function for handling connections. This will be used to create threads
 def clientthread(conn):

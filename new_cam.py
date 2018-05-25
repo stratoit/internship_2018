@@ -24,7 +24,7 @@ while(True):
         opening = cv2.morphologyEx(dilation, cv2.MORPH_OPEN, kernel)
         closing = cv2.morphologyEx(opening, cv2.MORPH_CLOSE, kernel)
 	
-	cv2.imshow('frame',frame)
+#	cv2.imshow('frame',frame)
 	cv2.imshow('mask',mask)
 	#cv2.imshow('res',res)
 	#cv2.imshow('erosion',erosion)
