@@ -10,7 +10,7 @@ count=0
 while(True):
 
 	_, frame = cap.read()
-	
+	cv2.imshow('frame',frame)
 	hsv=cv2.cvtColor(frame,cv2.COLOR_BGR2HSV)
 	l_r=np.array([20,150,130])
 	u_r=np.array([30,255,225])

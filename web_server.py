@@ -34,32 +34,13 @@ print 'Socket now listening'
 
 #Function for saving data with timestamp
 def WriteListtoCSV(data):
-
 	_, frame1 = cap.read(0)
 	frame = cv2.cvtColor(frame1, cv2.COLOR_BGR2GRAY)
 
 	_, th1 = cv2.threshold(frame, 100, 255, cv2.THRESH_BINARY);
 	h, w = frame.shape[:2]
-	
-#	# Determine contour of all blobs found
-#	contours0, hierarchy = cv2.findContours( th1.copy(), cv2.RETR_TREE, cv2.CHAIN_APPROX_NONE)
-#	contours = [cv2.approxPolyDP(cnt, 3, True) for cnt in contours0]
+	cv2.imshow('result',th1)
 
-#	# Draw all contours
-#	vis = np.zeros((h, w, 3), np.uint8)
-#	cv2.drawContours( vis, contours, -1, (128,255,255), 3, 8)
-#	
-#	vis2 = np.zeros((h, w, 3), np.uint8)
-#	perimeter=[]
-#	for cnt in contours[1:]:
-#	    perimeter.append(cv2.arcLength(cnt,True))
-
-#	#print max(perimeter)
-#	maxindex= perimeter.index(max(perimeter))
-
-#	cv2.drawContours( vis2, contours, maxindex +1, (255,0,0), -1)
-
-#	img_grey = cv2.cvtColor(vis2,cv2.COLOR_BGR2GRAY)
 	arr = np.asarray(th1).reshape((h,w)) #CHECK ORDER OF H AND W
 
 	arr = arr.flatten()
@@ -73,10 +54,9 @@ def WriteListtoCSV(data):
 def clientthread(conn):
     #infinite loop so that function do not terminate and thread do not end.
 	while True:
-         
         	#Sending to Client
 		x = input('Please give a control command number : ')
-#		arr = np.asarray(img_grey).reshape((h,w)) #CHECK ORDER OF H AND W
+
 		WriteListtoCSV(x);
 		conn.sendall(str(x))
 		#data=conn.recv(1024)
