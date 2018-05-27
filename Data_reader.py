@@ -1,10 +1,16 @@
 import csv
 import numpy as np
 import cv2
+import pandas as pd
+import matplotlib.pyplot as plt
+import matplotlib.image as mpimg
+from PIL import Image
 
-with open('tesdata.csv','rb') as f:
-	reader =  csv.reader(f)
-	for row in reader:
-		print type(row[1])
-#		np.reshape(arr,(640,480))
-#		cv2.imshow('frame',arr)
+df1 =  pd.read_csv('tesdata.csv',header=None)
+col = df1[0]
+row = df1.loc[0 , 1: ]
+arr = np.array(row)
+arr_new = arr.reshape(480,640)
+img = Image.fromarray(np.uint8(arr_new),'L' )
+img.show()
+

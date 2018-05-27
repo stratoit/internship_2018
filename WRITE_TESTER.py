@@ -16,7 +16,7 @@ while True:
 	cv2.imwrite("Latest.jpg",th1)
 	cv2.imshow('th1',th1)
 	arr = np.asarray(th1).reshape((h,w)) #CHECK ORDER OF H AND W
-
+	
 	arr = arr.flatten()
 	new_arr = data+arr.tolist()
 	key= cv2.waitKey(1) & 0xFF
