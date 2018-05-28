@@ -37,11 +37,11 @@ def WriteListtoCSV(data):
 	_, frame1 = cap.read(0)
 	frame = cv2.cvtColor(frame1, cv2.COLOR_BGR2GRAY)
 
-	_, th1 = cv2.threshold(frame, 100, 255, cv2.THRESH_BINARY);
+#	_, th1 = cv2.threshold(frame, 100, 255, cv2.THRESH_BINARY);
 	h, w = frame.shape[:2]
-	cv2.imwrite("Latest.jpg",th1)
+	cv2.imwrite("Latest.jpg",frame)
 	new_data = [data]
-	arr = np.asarray(th1).reshape((h,w)) #CHECK ORDER OF H AND W
+	arr = np.asarray(frame).reshape((h,w)) #CHECK ORDER OF H AND W
 
 	arr = arr.flatten()
 	new_arr = data + arr.tolist()
