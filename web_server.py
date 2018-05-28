@@ -33,21 +33,23 @@ s.listen(10)
 print 'Socket now listening'
 
 #Function for saving data with timestamp
-def WriteListtoCSV(data):
+def WriteListtoCSV(new_data):
+#	print(type(new_data))
 	_, frame1 = cap.read(0)
 	frame = cv2.cvtColor(frame1, cv2.COLOR_BGR2GRAY)
-
+#	print data
 #	_, th1 = cv2.threshold(frame, 100, 255, cv2.THRESH_BINARY);
 	h, w = frame.shape[:2]
 	cv2.imwrite("Latest.jpg",frame)
-	new_data = [data]
 	arr = np.asarray(frame).reshape((h,w)) #CHECK ORDER OF H AND W
-
+	data=[new_data]
 	arr = arr.flatten()
-	new_arr = data + arr.tolist()
+	new_arr = data+arr.tolist()
+
+#	print(len(new_arr))
 	with open ('tesdata.csv','a') as csvfile:
 		writer = csv.writer(csvfile,delimiter=",")
-		writer.writerows(new_arr) #check
+		writer.writerow(new_arr) #check
 
 #Function for handling connections. This will be used to create threads
 def clientthread(conn):
