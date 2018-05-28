@@ -36,12 +36,9 @@ print 'Socket now listening'
 def WriteListtoCSV(new_data):
 #	print(type(new_data))
 	_, frame1 = cap.read(0)
-	frame = cv2.cvtColor(frame1, cv2.COLOR_BGR2GRAY)
-#	print data
-#	_, th1 = cv2.threshold(frame, 100, 255, cv2.THRESH_BINARY);
-	h, w = frame.shape[:2]
-	cv2.imwrite("Latest.jpg",frame)
-	arr = np.asarray(frame).reshape((h,w)) #CHECK ORDER OF H AND W
+#	frame = cv2.cvtColor(frame1, cv2.COLOR_BGR2GRAY)
+	cv2.imwrite("Latest.jpg",frame1)
+	arr = np.asarray(frame1) #CHECK ORDER OF H AND W
 	data=[new_data]
 	arr = arr.flatten()
 	new_arr = data+arr.tolist()
