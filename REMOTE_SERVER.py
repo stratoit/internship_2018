@@ -79,11 +79,21 @@ def clientthread(conn):
 			WriteListtoCSV(steer_angle)
 			conn.sendall(str(2))
 		elif(x == ord('a')):
+			if(steer_angle>39):
+				steer_angle-=20
+			WriteListtoCSV(steer_angle)
+			conn.sendall(str(6))
+		elif(x == ord('d')):
+			if(steer_angle<85):
+				steer_angle+=20
+			WriteListtoCSV(steer_angle)
+			conn.sendall(str(1))
+		elif(x == ord('q')):
 			if(steer_angle>29):
 				steer_angle-=10
 			WriteListtoCSV(steer_angle)
 			conn.sendall(str(4))
-		elif(x == ord('d')):
+		elif(x == ord('e')):
 			if(steer_angle<95):
 				steer_angle+=10
 			WriteListtoCSV(steer_angle)
@@ -98,8 +108,7 @@ def clientthread(conn):
 			conn.sendall(str(8))
 		elif(x == ord('p')):
 			conn.sendall(str(0))
-			cv2.destroyAllWindows()
-			break
+			tot_speed=530
 
 
 		#data=conn.recv(1024)
