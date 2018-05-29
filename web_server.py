@@ -35,7 +35,8 @@ print 'Socket now listening'
 #Function for saving data with timestamp
 def WriteListtoCSV(new_data):
 #	print(type(new_data))
-	_, frame1 = cap.read(0)
+	_, frame = cap.read(0)
+	frame1 = cv2.resize(frame,None,fx = 0.5,fy=0.5)
 #	frame = cv2.cvtColor(frame1, cv2.COLOR_BGR2GRAY)
 	cv2.imwrite("Latest.jpg",frame1)
 	arr = np.asarray(frame1) #CHECK ORDER OF H AND W
