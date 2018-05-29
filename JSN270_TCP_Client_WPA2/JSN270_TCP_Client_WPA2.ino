@@ -11,6 +11,8 @@ int out1 = 9;
 int out2 = 10;
 String val1;
 int val=0;
+int speed =0;
+int ang =70;
 char c;
 
 #define USE_DHCP_IP 15
@@ -34,7 +36,7 @@ Servo Throttle, Steer;
 void setSpeed(int speed)
   {
     int angle = map(speed, 0, 1000, 0, 180); //Sets servo positions to different speeds
-    if (speed < 560){Throttle.write(angle);}
+    Throttle.write(angle);
   }
 
 
@@ -115,13 +117,15 @@ void loop() {
                   val = atoi(val1.c_str());
                   Serial.print(val);
                   Serial.println("");
-                  if(val > 500) {
-                    setSpeed(val); //Creates variable for speed to be used in in for loop  
-                    // runs at 539
-                  }
-                  if(val > 19 && val < 105){
-                    Steer.write(val);
-                  }
+                  if(val == 8) {speed = speed+1; setSpeed(530 + speed);}
+                  else if(val == 9) {{speed = speed-1; setSpeed(530 + speed);}} 
+                  else if(val == 3) { if(ang<95) {ang = ang+10; Steer.write(ang);}  }
+                  else if(val == 4) { if(ang>29){ang = ang-10; Steer.write(ang); } }
+                  else if(val == 2) {if(ang<101){ang = ang+5; Steer.write(ang);  }}
+                  else if(val == 5) {if(ang>24){ang = ang-5; Steer.write(ang);}}
+                  else if(val == 7) {ang = 70; Steer.write(ang);}
+                  else if(val == 0) {speed = 0; setSpeed(530);}
+
                 }
                 
                             
