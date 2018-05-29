@@ -119,12 +119,12 @@ void loop() {
                   Serial.println("");
                   if(val == 8) {speed = speed+1; setSpeed(530 + speed);}
                   else if(val == 9) {{speed = speed-1; setSpeed(530 + speed);}} 
-                  else if(val == 3) { if(ang<95) {ang = ang+10; Steer.write(ang);}  }
-                  else if(val == 4) { if(ang>29){ang = ang-10; Steer.write(ang); } }
-                  else if(val == 1) { if(ang<85) {ang = ang+20; Steer.write(ang);}  }
-                  else if(val == 6) { if(ang>39){ang = ang-20; Steer.write(ang); } }
-                  else if(val == 2) {if(ang<101){ang = ang+5; Steer.write(ang);  }}
-                  else if(val == 5) {if(ang>24){ang = ang-5; Steer.write(ang);}}
+                  else if(val == 3) { if(ang<100) {ang = ang+10; Steer.write(ang);}  }
+                  else if(val == 4) { if(ang>24){ang = ang-10; Steer.write(ang); } }
+                  else if(val == 1) { if(ang<90) {ang = ang+20; Steer.write(ang);}  }
+                  else if(val == 6) { if(ang>34){ang = ang-20; Steer.write(ang); } }
+                  else if(val == 2) {if(ang<105){ang = ang+5; Steer.write(ang);  }}
+                  else if(val == 5) {if(ang>19){ang = ang-5; Steer.write(ang);}}
                   else if(val == 7) {ang = 70; Steer.write(ang);}
                   else if(val == 0) {speed = 0; setSpeed(530);}
 

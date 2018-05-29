@@ -65,7 +65,7 @@ def clientthread(conn):
 
 		x = cv2.waitKey(0) & 0xFF
 		if (x == ord('z')):
-			if(steer_angle > 24):
+			if(steer_angle > 19):
 				steer_angle-=5
 			WriteListtoCSV(steer_angle)
 			conn.sendall(str(5))
@@ -74,27 +74,27 @@ def clientthread(conn):
 			WriteListtoCSV(tot_speed)
 			conn.sendall(str(9))
 		elif(x == ord('c')):
-			if(steer_angle<101):
+			if(steer_angle<105):
 				steer_angle+=5
 			WriteListtoCSV(steer_angle)
 			conn.sendall(str(2))
 		elif(x == ord('a')):
-			if(steer_angle>39):
+			if(steer_angle>34):
 				steer_angle-=20
 			WriteListtoCSV(steer_angle)
 			conn.sendall(str(6))
 		elif(x == ord('d')):
-			if(steer_angle<85):
+			if(steer_angle<90):
 				steer_angle+=20
 			WriteListtoCSV(steer_angle)
 			conn.sendall(str(1))
 		elif(x == ord('q')):
-			if(steer_angle>29):
+			if(steer_angle>24):
 				steer_angle-=10
 			WriteListtoCSV(steer_angle)
 			conn.sendall(str(4))
 		elif(x == ord('e')):
-			if(steer_angle<95):
+			if(steer_angle<100):
 				steer_angle+=10
 			WriteListtoCSV(steer_angle)
 			conn.sendall(str(3))
