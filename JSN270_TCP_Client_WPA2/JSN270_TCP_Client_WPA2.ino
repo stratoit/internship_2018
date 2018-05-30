@@ -7,8 +7,6 @@
 #define SSID      "Protec"		// your wifi network SSID
 #define KEY       "protec1234"		// your wifi network password
 #define AUTH       "WPA2" 		// your wifi network security (NONE, WEP, WPA, WPA2)
-int out1 = 9;
-int out2 = 10;
 String val1;
 int val=0;
 int speed =0;
