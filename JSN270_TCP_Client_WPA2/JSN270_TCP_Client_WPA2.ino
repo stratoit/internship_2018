@@ -4,9 +4,11 @@
 #include <SoftwareSerial.h>
 #include <Servo.h>
 
-#define SSID      "Protec"		// your wifi network SSID
-#define KEY       "protec1234"		// your wifi network password
+#define SSID      "stratoit2"		// your wifi network SSID
+#define KEY       "strato1010"		// your wifi network password
 #define AUTH       "WPA2" 		// your wifi network security (NONE, WEP, WPA, WPA2)
+int out1 = 9;
+int out2 = 10;
 String val1;
 int val=0;
 int speed =0;
@@ -21,7 +23,7 @@ char c;
 #define GATEWAY        "192.168.1.254"
 #endif
 
-#define HOST_IP        "192.168.200.255"
+#define HOST_IP        "192.168.0.5"
 #define REMOTE_PORT    8888
 #define PROTOCOL       "TCP"
 

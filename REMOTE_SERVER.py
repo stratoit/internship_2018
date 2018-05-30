@@ -12,7 +12,7 @@ from PIL import Image
 steer_angle = 70
 tot_speed = 530
  
-HOST = '192.168.200.255'   # Symbolic name meaning all available interfaces
+HOST = '192.168.0.5'   # Symbolic name meaning all available interfaces
 PORT = 8888 # Arbitrary non-privileged port
 
 cap = cv2.VideoCapture(0)
@@ -38,6 +38,11 @@ print 'Socket now listening'
 #Function for saving data with timestamp
 def WriteListtoCSV(new_data):
 #	print(type(new_data))
+	_, frame = cap.read(0)
+	_, frame = cap.read(0)
+	_, frame = cap.read(0)
+	_, frame = cap.read(0)
+	_, frame = cap.read(0)
 	_, frame = cap.read(0)
 	frame1 = cv2.resize(frame,None,fx = 0.5,fy=0.5)
 #	frame = cv2.cvtColor(frame1, cv2.COLOR_BGR2GRAY)
