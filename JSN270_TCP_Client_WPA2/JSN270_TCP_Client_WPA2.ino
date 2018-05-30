@@ -4,8 +4,8 @@
 #include <SoftwareSerial.h>
 #include <Servo.h>
 
-#define SSID      "stratoit2"		// your wifi network SSID
-#define KEY       "strato1010"		// your wifi network password
+#define SSID      "Protec"		// your wifi network SSID
+#define KEY       "protec1234"		// your wifi network password
 #define AUTH       "WPA2" 		// your wifi network security (NONE, WEP, WPA, WPA2)
 int out1 = 9;
 int out2 = 10;
@@ -23,7 +23,7 @@ char c;
 #define GATEWAY        "192.168.1.254"
 #endif
 
-#define HOST_IP        "192.168.0.5"
+#define HOST_IP        "192.168.200.255"
 #define REMOTE_PORT    8888
 #define PROTOCOL       "TCP"
 
@@ -119,10 +119,10 @@ void loop() {
                   Serial.println("");
                   if(val == 8) {speed = speed+1; setSpeed(530 + speed);}
                   else if(val == 9) {{speed = speed-1; setSpeed(530 + speed);}} 
-                  else if(val == 3) { if(ang<100) {ang = ang+10; Steer.write(ang);}  }
-                  else if(val == 4) { if(ang>24){ang = ang-10; Steer.write(ang); } }
-                  else if(val == 1) { if(ang<90) {ang = ang+20; Steer.write(ang);}  }
-                  else if(val == 6) { if(ang>34){ang = ang-20; Steer.write(ang); } }
+                  else if(val == 3) { if(ang<105) {ang = ang+10; Steer.write(ang);}  }
+                  else if(val == 4) { if(ang>19){ang = ang-10; Steer.write(ang); } }
+                  else if(val == 1) { if(ang<105) {ang = ang+20; Steer.write(ang);}  }
+                  else if(val == 6) { if(ang>19){ang = ang-20; Steer.write(ang); } }
                   else if(val == 2) {if(ang<105){ang = ang+5; Steer.write(ang);  }}
                   else if(val == 5) {if(ang>19){ang = ang-5; Steer.write(ang);}}
                   else if(val == 7) {ang = 70; Steer.write(ang);}

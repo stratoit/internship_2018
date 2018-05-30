@@ -12,7 +12,7 @@ from PIL import Image
 steer_angle = 70
 tot_speed = 530
  
-HOST = '192.168.0.5'   # Symbolic name meaning all available interfaces
+HOST = '192.168.200.255'   # Symbolic name meaning all available interfaces
 PORT = 8888 # Arbitrary non-privileged port
 
 cap = cv2.VideoCapture(0)
@@ -79,22 +79,22 @@ def clientthread(conn):
 			WriteListtoCSV(steer_angle)
 			conn.sendall(str(2))
 		elif(x == ord('a')):
-			if(steer_angle>34):
+			if(steer_angle>19):
 				steer_angle-=20
 			WriteListtoCSV(steer_angle)
 			conn.sendall(str(6))
 		elif(x == ord('d')):
-			if(steer_angle<90):
+			if(steer_angle<105):
 				steer_angle+=20
 			WriteListtoCSV(steer_angle)
 			conn.sendall(str(1))
 		elif(x == ord('q')):
-			if(steer_angle>24):
+			if(steer_angle>19):
 				steer_angle-=10
 			WriteListtoCSV(steer_angle)
 			conn.sendall(str(4))
 		elif(x == ord('e')):
-			if(steer_angle<100):
+			if(steer_angle<105):
 				steer_angle+=10
 			WriteListtoCSV(steer_angle)
 			conn.sendall(str(3))
