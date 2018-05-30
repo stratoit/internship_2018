@@ -69,16 +69,16 @@ def clientthread(conn):
 		print("Enter key:")
 
 		x = cv2.waitKey(0) & 0xFF
-		if (x == ord('z')):
+		if (x == ord('q')):
 			if(steer_angle > 19):
 				steer_angle-=5
 			WriteListtoCSV(steer_angle)
 			conn.sendall(str(5))
 		elif(x == ord('s')):
 			tot_speed-=1
-			WriteListtoCSV(tot_speed)
+			#WriteListtoCSV(tot_speed)
 			conn.sendall(str(9))
-		elif(x == ord('c')):
+		elif(x == ord('e')):
 			if(steer_angle<105):
 				steer_angle+=5
 			WriteListtoCSV(steer_angle)
@@ -93,25 +93,25 @@ def clientthread(conn):
 				steer_angle+=20
 			WriteListtoCSV(steer_angle)
 			conn.sendall(str(1))
-		elif(x == ord('q')):
+		elif(x == ord('z')):
 			if(steer_angle>19):
 				steer_angle-=10
 			WriteListtoCSV(steer_angle)
 			conn.sendall(str(4))
-		elif(x == ord('e')):
+		elif(x == ord('c')):
 			if(steer_angle<105):
 				steer_angle+=10
 			WriteListtoCSV(steer_angle)
 			conn.sendall(str(3))
 		elif(x == ord('x')):
 			steer_angle=70
-			WriteListtoCSV(steer_angle)
+			#WriteListtoCSV(steer_angle)
 			conn.sendall(str(7))
 		elif(x == ord("w")):
 			tot_speed+=1
-			WriteListtoCSV(tot_speed)
+			#WriteListtoCSV(tot_speed)
 			conn.sendall(str(8))
-		elif(x == ord('p')):
+		elif(x == ord('f')):
 			conn.sendall(str(0))
 			tot_speed=530
 
