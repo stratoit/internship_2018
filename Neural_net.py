@@ -23,15 +23,20 @@ labels = []
 
 my_data = np.loadtxt('Data.csv', delimiter=',')
 
-data = my_data[:,1:]
+data1 = my_data[:,1:]
 labels = my_data[:,0].tolist()
 
 le = LabelEncoder()
 labels = le.fit_transform(labels)
 
+data2 = data1 / np.linalg.norm(data1)
+data = normalize(data2[:,np.newaxis], axis=0).ravel()
+
+print(data[0,:])
+
 data = data/ 255.0
 
-labels = np_utils.to_categorical(labels, 2) #CHANGE 2 to number of classes
+labels = np_utils.to_categorical(labels, 5) #CHANGE 2 to number of classes
 
 print("[INFO] constructing training/testing split...")
 (trainData, testData, trainLabels, testLabels) = train_test_split(data, labels, test_size=0.25, random_state=42)

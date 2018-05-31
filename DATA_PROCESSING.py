@@ -1,23 +1,22 @@
-import cv2 as cv2
+
 import numpy as np
 
-my_data = np.loadtxt('Data.csv', delimiter=',')
-import time
+my_data = np.loadtxt('Data.csv', delimiter=',',dtype='i4')
 
-font                   = cv2.FONT_HERSHEY_SIMPLEX
-bottomLeftCornerOfText = (10,50)
-fontScale              = 1
-fontColor              = (255,255,255)
-lineType               = 2
-
-for i in range(0,my_data.shape[0]-1):
+for i in range(0,my_data.shape[0]):
 #	arr = my_data[i , 1:]
 	
-	if my_data[i,0] < 20 :
-		my_data[i,0] = 20
-	elif my_data[i,0] > 120 : 
-		my_data[i,0] = 120
-	np.savetxt("processed_data.csv", my_data, delimiter=",")
+	if my_data[i,0] < 30 :
+		my_data[i,0] = 30
+	elif my_data[i,0] == 40 : 
+		my_data[i,0] = 50
+	elif my_data[i,0] == 60 : 
+		my_data[i,0] = 70
+	elif my_data[i,0] == 80 : 
+		my_data[i,0] = 90
+	elif my_data[i,0] >= 100 : 
+		my_data[i,0] = 110
+	np.savetxt('processed_data.csv', my_data, delimiter=',')
 
 	
 #To show images :
