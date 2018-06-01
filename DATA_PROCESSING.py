@@ -1,22 +1,29 @@
-
+import csv
 import numpy as np
 
-my_data = np.loadtxt('Data.csv', delimiter=',',dtype='i4')
+my_data = np.loadtxt('pro_data.csv', delimiter=',',dtype='i4')
+#my_data = np.fromfile('small.csv', dtype='i4', count=-1, sep=',')
 
-for i in range(0,my_data.shape[0]):
-#	arr = my_data[i , 1:]
-	
-	if my_data[i,0] < 30 :
-		my_data[i,0] = 30
-	elif my_data[i,0] == 40 : 
-		my_data[i,0] = 50
-	elif my_data[i,0] == 60 : 
-		my_data[i,0] = 70
-	elif my_data[i,0] == 80 : 
-		my_data[i,0] = 90
-	elif my_data[i,0] >= 100 : 
-		my_data[i,0] = 110
-	np.savetxt('processed_data.csv', my_data, delimiter=',')
+#for i in range(0,my_data.shape[0]):
+##	arr = my_data[i , 1:]
+
+#	if my_data[i,0] < 30 :
+#		my_data[i,0] = 30
+#	elif my_data[i,0] == 40 : 
+#		my_data[i,0] = 50
+#	elif my_data[i,0] == 60 : 
+#		my_data[i,0] = 70
+#	elif my_data[i,0] == 80 : 
+#		my_data[i,0] = 90
+#	elif my_data[i,0] >= 100 : 
+#		my_data[i,0] = 110
+#	
+#	new_arr = [my_data[i,0]]+my_data[i,1:].tolist()
+#	with open ('pro_temp_data.csv','a') as csvfile:
+#		writer = csv.writer(csvfile,delimiter=",")
+#		writer.writerow(new_arr)
+
+print(my_data.shape)
 
 	
 #To show images :
