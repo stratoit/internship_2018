@@ -1,7 +1,7 @@
 import cv2 as cv2
 import numpy as np
 
-my_data = np.loadtxt('Data.csv', delimiter=',')
+my_data = np.loadtxt('tesdata.csv', delimiter=',')
 import time
 
 font                   = cv2.FONT_HERSHEY_SIMPLEX
