@@ -58,10 +58,10 @@ print("[INFO] constructing training/testing split...")
 (trainData, testData, trainLabels, testLabels) = train_test_split(data, labels, test_size=0.25, random_state=42)
 
 model = Sequential()
-model.add(Dense(300,input_dim=230400, kernel_initializer="uniform",activation="relu", kernel_constraint=maxnorm(4)))
+model.add(Dense(300,input_dim=230400, kernel_initializer="uniform",activation="relu", kernel_constraint=maxnorm(3)))
+model.add(Dropout(0.8))
+model.add(Dense(30, activation="relu", kernel_initializer="uniform", kernel_constraint=maxnorm(3)))
 model.add(Dropout(0.5))
-model.add(Dense(30, activation="relu", kernel_initializer="uniform", kernel_constraint=maxnorm(4)))
-model.add(Dropout(0.3))
 model.add(Dense(3))
 model.add(Activation("softmax"))
 
@@ -77,7 +77,7 @@ model.fit(trainData, trainLabels, epochs=50, batch_size=10,verbose=1)
 
 # show the accuracy on the testing set
 print("[INFO] evaluating on testing set...")
-(loss, accuracy) = model.evaluate(testData, testLabels,batch_size=3, verbose=1)
+(loss, accuracy) = model.evaluate(testData, testLabels,batch_size=10, verbose=1)
 print("[INFO] loss={:.4f}, accuracy: {:.4f}%".format(loss,accuracy * 100))
 
 # dump the network architecture and weights to file
