@@ -1,7 +1,6 @@
 import cv2 as cv2
 import numpy as np
-from matplotlib import pyplot as plt
-from PIL import Image
+
 import csv
 import time
 
@@ -20,10 +19,10 @@ while(True):
 	
 
 	key = cv2.waitKey(1) & 0xFF 
- 	if key == ord('a') :
+	if key == ord('a') :
 		_, th1 = cv2.threshold(frame, 100, 255, cv2.THRESH_BINARY);
 		h, w = frame.shape[:2]
-		
+
 		# Determine contour of all blobs found
 		contours0, hierarchy = cv2.findContours( th1.copy(), cv2.RETR_TREE, cv2.CHAIN_APPROX_NONE)
 		contours = [cv2.approxPolyDP(cnt, 3, True) for cnt in contours0]
@@ -31,11 +30,11 @@ while(True):
 		# Draw all contours
 		vis = np.zeros((h, w, 3), np.uint8)
 		cv2.drawContours( vis, contours, -1, (128,255,255), 3, 8)
-		
+
 		vis2 = np.zeros((h, w, 3), np.uint8)
 		perimeter=[]
 		for cnt in contours[1:]:
-		    perimeter.append(cv2.arcLength(cnt,True))
+			perimeter.append(cv2.arcLength(cnt,True))
 
 		#print max(perimeter)
 		maxindex= perimeter.index(max(perimeter))
