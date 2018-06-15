@@ -9,6 +9,7 @@ from keras import optimizers
 from keras.constraints import maxnorm
 from keras.utils import np_utils
 from keras.models import model_from_yaml
+from keras import regularizers
 from keras.optimizers import SGD
 
 #Change here
@@ -18,7 +19,7 @@ img_columns = 100
 data = []
 labels = []
 
-my_data = np.loadtxt('SMALL_CROP4.csv', delimiter=',',dtype='i4')
+my_data = np.loadtxt('UNAUG_55_100_TRAIN_5.csv', delimiter=',',dtype='i4')
 print('Data loaded')
 
 labels = my_data[:,0].tolist()
@@ -31,7 +32,7 @@ data = my_data[:,1:]
 data,labels = shuffle(data,labels,random_state=2)
 
 print("[INFO] constructing training/testing split...")
-(trainData, testData, trainLabels, testLabels) = train_test_split(data, labels, test_size=0.2, random_state=2)
+(trainData, testData, trainLabels, testLabels) = train_test_split(data, labels, test_size=0.1, random_state=2)
 
 trainData = trainData.reshape(trainData.shape[0], img_rows, img_columns,3)
 testData = testData.reshape(testData.shape[0], img_rows, img_columns,3)
@@ -51,31 +52,30 @@ input_shape = (img_rows,img_columns,3)
 model = Sequential()
 
 
-model.add(Conv2D(32, (3, 3), activation='relu', input_shape=input_shape))
-model.add(Conv2D(32, (3, 3), activation='relu'))
+model.add(Conv2D(32, (3, 3), activation='relu',kernel_regularizer=regularizers.l2(0.05), input_shape=input_shape))
+model.add(Conv2D(32, (3, 3), activation='relu',kernel_regularizer=regularizers.l2(0.05)))
 model.add(MaxPooling2D(pool_size=(2, 2)))
-model.add(Dropout(0.25))
+# model.add(Dropout(0.5))
 
-model.add(Conv2D(64, (3, 3), activation='relu'))
-model.add(Conv2D(64, (3, 3), activation='relu'))
+model.add(Conv2D(64, (3, 3), activation='relu',kernel_regularizer=regularizers.l2(0.05)))
+model.add(Conv2D(64, (3, 3), activation='relu',kernel_regularizer=regularizers.l2(0.05)))
 model.add(MaxPooling2D(pool_size=(2, 2)))
-model.add(Dropout(0.5))
+# model.add(Dropout(0.5))
 
 model.add(Flatten())
-model.add(Dense(256, activation='relu'))
-model.add(Dropout(0.5))
-model.add(Dense(3, activation='softmax'))
+model.add(Dense(256, activation='relu',kernel_regularizer=regularizers.l2(0.05)))
+model.add(Dense(3, activation='softmax',kernel_regularizer=regularizers.l2(0.05)))
 
 # train the model using Adam
 print("[INFO] compiling model...")
-lr = 0.0001
+lr = 0.00001
 beta_1 = 0.9
 beta_2 = 0.999
 epsilon = 10 ** (-8)
 opt = optimizers.Adam(lr=lr, beta_1=beta_1, beta_2=beta_2, epsilon=epsilon, clipnorm=1.)
 
 model.compile(loss="categorical_crossentropy", optimizer=opt, metrics=["categorical_accuracy"])
-history=model.fit(trainData, trainLabels, epochs=10, batch_size=10,verbose=1)
+model.fit(trainData, trainLabels, epochs=30, batch_size=10,verbose=1)
 
 # show the accuracy on the testing set
 print("[INFO] evaluating on testing set...")
