@@ -13,13 +13,13 @@ from keras import regularizers
 from keras.optimizers import SGD
 
 #Change here
-img_rows = 55
-img_columns = 100
+img_rows = 45
+img_columns = 80
 
 data = []
 labels = []
 
-my_data = np.loadtxt('UNAUG_55_100_TRAIN_5.csv', delimiter=',',dtype='i4')
+my_data = np.loadtxt('UNAUG_45_80_TRAIN_6_WITHFLIP.csv', delimiter=',',dtype='i4')
 print('Data loaded')
 
 labels = my_data[:,0].tolist()
@@ -68,7 +68,7 @@ model.add(Dense(3, activation='softmax',kernel_regularizer=regularizers.l2(0.05)
 
 # train the model using Adam
 print("[INFO] compiling model...")
-lr = 0.00001
+lr = 0.0001
 beta_1 = 0.9
 beta_2 = 0.999
 epsilon = 10 ** (-8)
