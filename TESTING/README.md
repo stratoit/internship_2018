@@ -5,3 +5,5 @@
 **JARDUINO** - We were intially using the [JSN270 JARDUINO board](https://github.com/jmpsystems/JSN270-arduino-shield), but we do not recommend this as it often sent garbage values to the motors. The orange board with inbuilt wifi module is much better in comparison.
 
 **IMAGE_PROCESSING** - We tried to process the input image to isolate the line to be followed, but we found this task to be time consuming as well as challenging as different lighting conditions, colour of tracks increased the difficulty of this problem. Also we found that, given enough examples the neural network would *LEARN TO DO THIS ON ITS OWN*
+
+**NEURAL_NET** - This folder contains a few standard neural networks which you can test to check if your tensorflow-gpu,CUDA etc are working properly together.
