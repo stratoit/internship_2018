@@ -1,3 +1,8 @@
+# When we save data, we have different steer angles for different degrees of left/right turns.
+# we classify all the left turns( with values less than 70) as 40 and so on. We believe that if 
+# we run the neural net fast enough or if we introduce relative angles at test time then this would make the
+# training phase easier, whilst not compromising in drive quality.
+
 import csv
 import numpy as np
 

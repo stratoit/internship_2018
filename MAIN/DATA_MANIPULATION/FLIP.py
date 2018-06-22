@@ -1,3 +1,6 @@
+# This program simply flips the image horizontally while changing the label from left to right
+# and vice-versa. This is a simple data augmentation technique.
+
 import cv2 as cv2
 import numpy as np
 import csv

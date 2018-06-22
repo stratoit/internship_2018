@@ -1,3 +1,7 @@
+# This code loads the images saved in a csv file, converts them to HSV, orthogonally changes 
+# the HSV values(i.e. at a time only one of h,s,v is changed) and saves the new images back into
+# csv with the old ones
+
 import cv2 as cv2
 import numpy as np
 import csv
