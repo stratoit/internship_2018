@@ -24,15 +24,15 @@ Instead of providing direct instructions, we have provided instructions in impor
 
 We have used [the following RC car](https://eugenetoyandhobby.com/shop/ecx-ruckus-monster-truck-2wd-ruckus-monster-truck-bdlipo-orangeblack-110-scale-rtr-03331t2/) : 
 
-![alt-text](https://github.com/stratoit/internship_2018/blob/master/CORE/CAR.jpg)
+![alt-text](https://github.com/stratoit/internship_2018/blob/master/sides/CAR.jpg)
 
 Which after attaching an orange board arduino, with inbuilt wifi module became :
 
-![alt-text](https://github.com/stratoit/internship_2018/blob/master/CORE/MOD_CAR.jpg)
+![alt-text](https://github.com/stratoit/internship_2018/blob/master/sides/MOD_CAR.jpg)
 
 As you can see, there is a camera attached in front of the car which is a FPV wireless camera capable of sending radio signals to its receiver at a very high frame rate. The receiver would look something like this :
 
-![alt-text](https://github.com/stratoit/internship_2018/blob/master/CORE/REC.jpg)
+![alt-text](https://github.com/stratoit/internship_2018/blob/master/sides/REC.jpg)
 
 The RC car received radio signals from the remote control which were then converted to PWM signals which could run the steer and throttle motors. We replaced the radio receiver with 
 an Orange board Arduino which could connect to a python web server running on our PC using TCP-IP protocol. The arduino would then interpret signals sent through the python server and would send
