@@ -15,9 +15,10 @@ Make sure you follow some video tutorial for installing the right combination of
 
 Some errors while compiling may just occur due to changing our version of python, opencv, keras. A simple read of the documentation of your softwares would lead you to the code which would work on your system.
 
-## Running the tests
+## Checking it out
 
-Explain how to run the automated tests for this system
+Instead of providing direct instructions, we have provided instructions in important sub-folders explaining the files in that folder. This folder contains a PDF file **DOCUMENTATION** explaining our project in detail, along with two other folders **USING** (*containing all the important code files*) and **TESTING** (*containing files just used for testing or codes which do not work/are not used/are yet to be fully implemented*).
+ Check these folders out. Each of them contains a separate README.md file which will help you further.
 
 ### Break down into end to end tests
 
