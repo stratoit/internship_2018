@@ -1,6 +1,6 @@
 ### This folder contains 5 sub-folders. The code in each folder serves a particular purpose in this project, as mentioned below : ###
 
-**DATA_MANIPULATION** - This includes code for resizing the images stored in csv files, reducing the number of labels in the data(Currently we use 1 label for left, 1 for right and 1 straight and an image of size 45*80*3 as input to the conv net)etc. This also includes data augmentation code files.
+**DATA_MANIPULATION** - This includes code for resizing the images stored in csv files, reducing the number of labels in the data(Currently we use 1 label for left, 1 for right and 1 straight and an image of size 45 * 80 * 3 as input to the conv net)etc. This also includes data augmentation code files.
 
 **NEURAL_NETS** - This includes code for all the neural networks used in this project.
 
