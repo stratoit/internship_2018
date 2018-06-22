@@ -30,6 +30,10 @@ Which after attaching an orange board arduino, with inbuilt wifi module became :
 
 ![alt-text](https://github.com/stratoit/internship_2018/blob/master/CORE/MOD_CAR.jpg)
 
+As you can see, there is a camera attached in front of the car which is a FPV wireless camera capable of sending radio signals to its receiver at a very high frame rate. The receiver would look something like this :
+
+![alt-text](https://github.com/stratoit/internship_2018/blob/master/CORE/REC.jpg)
+
 ## Authors
 
 * **[Sudarshan Kamath](https://in.linkedin.com/in/sudarshankamath)** - *Pre-Final year student pursuing B.tech in Mechanical Engineering at the Indian Institute of technology, Guwahati*
