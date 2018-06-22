@@ -1,3 +1,7 @@
+# Run this code to threshold the image between two pixel limits and return an image with
+# the largest contour highlighted. This code will run for a saved image.
+
+# Necessary imports
 import cv2
 import numpy as np
 from matplotlib import pyplot as plt

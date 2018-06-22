@@ -1,3 +1,7 @@
+# Run this code to read chessboard images and save the undistored images as well
+# as the camera parameters into readable files
+
+# Necessary imports
 import numpy as np
 import cv2
 import glob
@@ -21,6 +25,7 @@ imgPointsArray = []
 
 # Loop over the image files
 for path in glob.glob('camera_cal/*.jpg'):
+
 	# Load the image and convert it to gray scale
 	img = cv2.imread(path)
    	gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
@@ -40,7 +45,7 @@ for path in glob.glob('camera_cal/*.jpg'):
         	# Draw the corners on the image
 		cv2.drawChessboardCorners(img, (cols, rows), corners, ret)
     
-    		# Display the image
+    	# Display the image
 		#cv2.imshow('chess board', img)
 		#cv2.waitKey(500)
 
@@ -49,6 +54,7 @@ cv2.destroyAllWindows()
 # Calibrate the camera and save the results
 ret, mtx, dist, rvecs, tvecs = cv2.calibrateCamera(objectPointsArray, imgPointsArray, gray.shape[::-1], None, None)
 np.savez('calib.npz', mtx=mtx, dist=dist, rvecs=rvecs, tvecs=tvecs)
+
 # Print the camera calibration error
 error = 0
 
@@ -68,8 +74,9 @@ newCameraMtx, roi = cv2.getOptimalNewCameraMatrix(mtx, dist, (w, h), 1, (w, h))
 
 count = 0
 
- #Loop over the image files
+#Loop over the image files
 for path in glob.glob('camera_cal/calibration[0-1][0-9].jpg'):
+
 	img = cv2.imread(path)
 	undistortedImg = cv2.undistort(img, mtx, dist, None, newCameraMtx)
 
@@ -84,5 +91,5 @@ for path in glob.glob('camera_cal/calibration[0-1][0-9].jpg'):
 	#cv2.waitKey(1000)
 
 cv2.destroyAllWindows()
-#yhkim@strato-it.co.kr
+
 

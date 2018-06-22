@@ -1,8 +1,11 @@
+# The data is saved in a CSV fle. The first column of each row is the label while the next x columns are
+# pixel values between 0-255, flattened out. This code helps read a csv and reform the image of appropriate size
+
 import cv2 as cv2
 import numpy as np
 
+#Load the data from csv file and store it in a numpy array
 my_data = np.loadtxt('tesdata.csv', delimiter=',')
-import time
 
 font                   = cv2.FONT_HERSHEY_SIMPLEX
 bottomLeftCornerOfText = (10,50)
@@ -10,7 +13,9 @@ fontScale              = 1
 fontColor              = (255,255,255)
 lineType               = 2
 
+# Iterate over the rows and display eachimage with their corresponding predictions
 for i in range(0,my_data.shape[0]-1):
+	
 	arr = my_data[i , 1:]
 	command = my_data[i,0]
 

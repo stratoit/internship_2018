@@ -1,3 +1,7 @@
+# Run this code as a substite for LIVE_IMAGE.py if you want to check the results on
+# the camera stream and save the results in a csv files
+
+#Necessary imports
 import cv2 as cv2
 import numpy as np
 
@@ -46,6 +50,8 @@ while(True):
 
 		arr = arr.flatten()
 		print(arr)
+		
+		#Write to csv
 		with open("img_pixels.csv", 'a') as f:
 			writer = csv.writer(f)
 			now = time.strftime('%d-%m-%Y %H:%M:%S')
