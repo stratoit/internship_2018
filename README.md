@@ -34,3 +34,8 @@ This project must not be replicated without necessary permissions from Strato-IT
 
 ## Important Links
 
+* [PyImageSearch](https://www.pyimagesearch.com/start-here-learn-computer-vision-opencv/) - *An important blog containing multiple tips and tricks regarding the synchronous working of OpenCV, Keras, tensorflow using GPU etc*
+* [RyanZotti's Project](https://github.com/RyanZotti) - *This helped us avoid a lot of mistakes*
+* [Laurence Moroney's Blog](https://medium.com/@lmoroney_40129/installing-tensorflow-with-gpu-on-windows-10-3309fec55a00) - *This made all our installations go smoothly*
+
+Other important links will be provided in their respective folders.
