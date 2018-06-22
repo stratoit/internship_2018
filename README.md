@@ -58,11 +58,10 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 * **Sudarshan Kamath** - *Pre-Final year student pursuing B.tech in Mechanical Engineering at the Indian Institute of technology, Guwahati*
 * **Kaustubh Vyas** - *Pre-Final year student pursuing B.tech in Electrical Engineering at the Indian Institute of technology, Bombay*
 * **Anurag Sonthalia** - *Pre-Final year student pursuing B.tech in Chemical Science and Engineering at the Indian Institute of technology, Guwahati*
-* 
 
 ## License
 
 This project must not be replicated without necessary permissions from Strato-IT or the authors.
 
-##Important Links
+## Important Links
 
