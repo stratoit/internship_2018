@@ -22,6 +22,9 @@ Instead of providing direct instructions, we have provided instructions in impor
 
 ## Hardware requirements
 
+We have used the following RC car : 
+![alt-text](https://github.com/stratoit/internship_2018/blob/master/CORE/CAR.jpg)
+
 ## Authors
 
 * **[Sudarshan Kamath](https://in.linkedin.com/in/sudarshankamath)** - *Pre-Final year student pursuing B.tech in Mechanical Engineering at the Indian Institute of technology, Guwahati*
