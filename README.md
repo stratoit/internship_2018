@@ -23,7 +23,12 @@ Instead of providing direct instructions, we have provided instructions in impor
 ## Hardware requirements
 
 We have used the following RC car : 
+
 ![alt-text](https://github.com/stratoit/internship_2018/blob/master/CORE/CAR.jpg)
+
+Which after attaching an orange board arduino, with inbuilt wifi module became :
+
+![alt-text](https://github.com/stratoit/internship_2018/blob/master/CORE/MOD_CAR.jpg)
 
 ## Authors
 
