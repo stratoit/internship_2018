@@ -57,11 +57,11 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 ## Authors
 
 * **[Sudarshan Kamath](https://in.linkedin.com/in/sudarshankamath)** - *Pre-Final year student pursuing B.tech in Mechanical Engineering at the Indian Institute of technology, Guwahati*
-![alt text](https://github.com/stratoit/internship_2018/blob/master/CORE/1.jpg=20x20)
+![alt text](https://github.com/stratoit/internship_2018/blob/master/CORE/1.jpg=50x50)
 * **[Kaustubh Vyas](https://www.linkedin.com/in/kaustubh-vyas-29639b113/)** - *Pre-Final year student pursuing B.tech in Electrical Engineering at the Indian Institute of technology, Bombay*
-![alt text](https://github.com/stratoit/internship_2018/blob/master/CORE/2.jpg=20x20)
+![alt text](https://github.com/stratoit/internship_2018/blob/master/CORE/2.jpg=50x50)
 * **[Anurag Sonthalia](https://www.linkedin.com/in/anurag-sonthalia/)** - *Pre-Final year student pursuing B.tech in Chemical Science and Engineering at the Indian Institute of technology, Guwahati*
-![alt text](https://github.com/stratoit/internship_2018/blob/master/CORE/3.jpg=20x20)
+![alt text](https://github.com/stratoit/internship_2018/blob/master/CORE/3.jpg=50x50)
 
 ## License
 
