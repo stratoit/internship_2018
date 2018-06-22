@@ -17,7 +17,7 @@ Some errors while compiling may just occur due to changing our version of python
 
 ## Understanding this repository
 
-Instead of providing direct instructions, we have provided instructions in important sub-folders explaining the files in that folder. This folder contains a PDF file **DOCUMENTATION** explaining our project in detail, along with two other folders **USING** (*containing all the important code files*) and **TESTING** (*containing files just used for testing or codes which do not work/are not used/are yet to be fully implemented*).
+Instead of providing direct instructions, we have provided instructions in important sub-folders explaining the files in that folder. This folder contains a PDF file **DOCUMENTATION** explaining our project in detail, along with two other folders **MAIN** (*containing all the important code files*) and **TESTING** (*containing files just used for testing or codes which do not work/are not used/are yet to be fully implemented*).
  Check these folders out. Each of them contains a separate README.md file which will help you further.
 
 ## Hardware requirements
