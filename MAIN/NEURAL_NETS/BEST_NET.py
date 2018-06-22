@@ -59,7 +59,7 @@ print("[INFO] constructing training/testing split...")
 
 model = Sequential()
 model.add(Dense(300,input_dim=230400, kernel_initializer="uniform",activation="relu", kernel_constraint=maxnorm(3)))
-model.add(Dropout(0.8))
+model.add(Dropout(0.5))
 model.add(Dense(30, activation="relu", kernel_initializer="uniform", kernel_constraint=maxnorm(3)))
 model.add(Dropout(0.5))
 model.add(Dense(3))
