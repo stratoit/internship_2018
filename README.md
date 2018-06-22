@@ -40,7 +40,7 @@ an Orange board Arduino which could connect to a python web server running on ou
 
 You may require a soldering rod, male to female, female to female and male to male connecting wires and pins, a brown board and other stationary items like tape etc for making the track.
 
-####We have used an Nvidia GeForce 1050 Ti GPU which led to most neural networks completeing 10 epochs in less than 15 mins.
+**We have used an Nvidia GeForce 1050 Ti GPU which led to most neural networks completeing 10 epochs in less than 15 mins.**
 
 ## Authors
 
