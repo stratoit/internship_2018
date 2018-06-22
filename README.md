@@ -15,7 +15,7 @@ Make sure you follow some video tutorial for installing the right combination of
 
 Some errors while compiling may just occur due to changing our version of python, opencv, keras. A simple read of the documentation of your softwares would lead you to the code which would work on your system.
 
-## Checking it out
+## Understanding this repository
 
 Instead of providing direct instructions, we have provided instructions in important sub-folders explaining the files in that folder. This folder contains a PDF file **DOCUMENTATION** explaining our project in detail, along with two other folders **USING** (*containing all the important code files*) and **TESTING** (*containing files just used for testing or codes which do not work/are not used/are yet to be fully implemented*).
  Check these folders out. Each of them contains a separate README.md file which will help you further.
@@ -37,6 +37,10 @@ As you can see, there is a camera attached in front of the car which is a FPV wi
 The RC car received radio signals from the remote control which were then converted to PWM signals which could run the steer and throttle motors. We replaced the radio receiver with 
 an Orange board Arduino which could connect to a python web server running on our PC using TCP-IP protocol. The arduino would then interpret signals sent through the python server and would send
  corresponding PWM control signals to the motors.
+
+You may require a soldering rod, male to female, female to female and male to male connecting wires and pins, a brown board and other stationary items like tape etc for making the track.
+
+####We have used an Nvidia GeForce 1050 Ti GPU which led to most neural networks completeing 10 epochs in less than 15 mins.
 
 ## Authors
 
