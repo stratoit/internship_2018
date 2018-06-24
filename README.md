@@ -1,11 +1,10 @@
 # SELF DRIVING VEHICLE USING DEEP NEURAL NETWORKS
 
-This project is an attempt to make a line follower car which can be controlled through an neural network running remotely on a PC. The aim is to make the car usable over all lines and surfaces.
-This project was created in the months of May to July 2018, as a part of our internship at Strato-IT. Deep Learning has often been used in self driving vehicles on the roads as well as in the industries.
-  We shall be going through those, while justifying why we approached the problem using a simple fully connected neural network. We would also be describing the 
- difficulties that we made and the mistakes that you could make and hence be on a lookout for. 
+This project is an attempt to make a line follower car which can be controlled through a neural network running remotely on a PC. The aim is to make the car usable over all lines and surfaces.
+This project was created in the months of May to July 2018, as a part of our internship at Strato-IT.
+ We would also be describing the difficulties that we faced and the mistakes that you could make and hence be on the lookout for. 
  In the end, we would be describing the results and would also provide a few points for improvement 
- over our model. 
+ in our project. 
 
 ## Getting Started and Prerequisites
 
