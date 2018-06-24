@@ -42,6 +42,20 @@ You may require a soldering rod, male to female, female to female and male to ma
 
 **We have used an Nvidia GeForce 1050 Ti GPU which led to most neural networks completing 10 epochs in less than 15 mins.**
 
+## Methodology : 
+
+We have used the following approach to this problem in order to gain an optimum solution :   
+
+* Try and achieve complete control over the RC car’s throttle and steer through a command line interface or PC control over WiFi using an Arduino board.
+* Attach camera on the car at a suitable position on the car and code it to run simultaneously with the car with minimal lag.
+* Design a track in a way such that it doesn’t challenge the limitations of the car.  
+* Use the camera and the car to gain training data for the ML/DL model by driving it ourselves.
+* Find potential models which can be trained with the help of this data.
+* Train model and then test it.
+* Find scopes for improvement and try and improve accuracy of model. 
+* If step 6 does not work, then try another model. 
+* The above steps 4 to 7 are repeated until we get a model which gives a proper working for the data we have with least deviation from the followed path.
+
 ## Authors
 
 * **[Sudarshan Kamath](https://in.linkedin.com/in/sudarshankamath)** - *Pre-Final year student pursuing B.tech in Mechanical Engineering at the Indian Institute of technology, Guwahati*
