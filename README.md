@@ -1,7 +1,13 @@
 # SELF DRIVING VEHICLE USING DEEP NEURAL NETWORKS
 
 This project is an attempt to make a line follower car which can be controlled through an neural network running remotely on a PC. The aim is to make the car usable over all lines and surfaces.
-This project was created in the months of May to July 2018, as a part of our internship at Strato-IT.
+This project was created in the months of May to July 2018, as a part of our internship at Strato-IT. Deep Learning has often been used in self driving vehicles on the roads as well as in the industries.
+ Image classification benchmarks have been established quite popularly using neural networks. 
+ We realize the underlying potential of neural networks and hence aim to create a line following RC car using deep learning techniques. We shall be using the video obtained through an FPV camera for input. 
+ There are various approaches to this problem. We shall be going through those, while justifying why we approached the problem using a simple fully connected neural network. We would also be describing the 
+ difficulties that we made and the mistakes that you could make and hence be on a lookout for. 
+ In the end, we would be describing the results and would also provide a few points for improvement 
+ over our model. 
 
 ## Getting Started and Prerequisites
 
@@ -42,7 +48,7 @@ You may require a soldering rod, male to female, female to female and male to ma
 
 **We have used an Nvidia GeForce 1050 Ti GPU which led to most neural networks completing 10 epochs in less than 15 mins.**
 
-## Methodology : 
+## Methodology 
 
 We have used the following approach to this problem in order to gain an optimum solution :   
 
