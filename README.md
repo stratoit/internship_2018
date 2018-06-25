@@ -118,7 +118,7 @@ Trying to drive the car around manually was quite difficult at first, but we mad
 video game. We also reduced the speed drastically to improve user control.  
  
 We were able to maneuver the car manually, but these attempts were futile as we realised that we could create much better quality data by simply holding the car at different 
-positions and intuitively predicting the angles it would take now. *We followed one thumb rule*. If the camera was on the line in the image then we had to go straight, 
+positions and intuitively predicting the angles it would take now. **We followed one thumb rule**. If the camera was on the line in the image then we had to go straight, 
 if the camera was to the left, then we take a right and if the camera was to the right then we take a left. We collected around 11,000+ images of data in this manner divided over 3 classes (L, R, S) equally and randomly.
 
 ## Authors
