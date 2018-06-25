@@ -72,10 +72,30 @@ garbage values in the bluetooth buffer and a lag in command sending and receivin
  
 There was a radio receiver attached to the RC car, which received signals from the remote control and then sent PWM signals to the on-board controller of the car. 
 We removed this radio receiver and used the arduino as a receiver of command line signals. The arduino would then interpret this signals and provide the suitable 
-PWM signals to the steer and throttle control motors. The required values of the PWM signals were first measured with the help of an oscilloscope attached to the radio receiver.   
+PWM signals to the steer and throttle control motors. The required values of the PWM signals were first measured with the help of an oscilloscope attached to the radio receiver. 
+  
 The remote control provided an almost continuous range of steer angles and throttle speeds, including the ability to reverse. We decided that we did not 
 require such excessive functionalities in our car for this project. Hence we made it possible to iterate back and forth over a few discrete steer angle values which provided us 
-enough control over the car to make it possible to manually maneuver the car over our track. Based on your requirements you may modify this code slightly to provide more or less control. 
+enough control over the car to make it possible to manually maneuver the car over our track. Based on your requirements you may modify this code slightly to provide more or less control.
+
+## Python Code for Data Collection
+
+The python code simulates a TCP web server for the client to connect to at the IP address and host port mentioned in the code. 
+We make sure the car and the arduino are connected to the same wifi connection. This code also simultaneously captures the video 
+input from the camera. After establishing connection, it waits for user commands. We have given multiple control keys for the user to increase/decrease throttle as well as to control steering angles. 
+ 
+The steer angles are written into a CSV file along with the input image converted from a 240*320*3 input image array to a row of integers in a CSV file where 
+the first column of each row corresponds to the steer command whilst the rest of the 230400 columns each contain an integer representing the pixel value of the 
+image array between 0 and 255. The size of the image was decided intuitively. We have resized the image to half the size to reduce the dimensionality of the feature vectors. 
+Since the image still retains a decent quality, we do not think that this would reduce or effect the accuracy of the network in any way. 
+ 
+Later these pixel values are processed, resized and used as features into the neural network whilst the first column values are used as their corresponding labels. 
+ 
+The commands correspond to an increment or decrement in steer angles and throttle values over discrete steps. We have not allowed the user to provide absolute angle and 
+speed commands to the car for ease of usage. You can change this with minute changes to the code.
+ 
+The CSV file is written over whenever a user steer angle input in provided. We have also ensured that the user is unable to provide steer commands to the wheel after achieving the 
+maximum physically possible steer angles. Currently the lag is almost negligible and the commands are executed instateously.  
 
 ## Authors
 
