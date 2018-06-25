@@ -161,6 +161,8 @@ and process the data and predict a class, how fast the car physically steers, th
 Accuracy may often be a wrong measure of how well the car drives. When we run the neural net at a very fast sampling rate, then sometimes an image with the camera **just to the right** of the track may get a command **to
 go straight**, but the next sampled image may get predicted correctly. So often these wrong predictions are not noticable and hence would not affect your application. 
 * Random splitting and shuffling the train-test data often leads to slightly different accuracies in different experiments. This it possible for us to only give an approxiamte measure of accuracy.
+* You might have to often make decisions regarding bias-variance tradeoffs i.e. do you want to make the car run very well just on the current track or would you like it to run on many tracks? This would change how
+you collect your data, adjust your learning rate, your regularisation etc.
 
 ## Visualising the Neural Net
 
