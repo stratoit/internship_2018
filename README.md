@@ -14,7 +14,9 @@ We started out by compiling the project in a python 2 environment on an Ubuntu S
 pip install x
 ```
 Make sure you follow some video tutorial for installing the right combination of tensorflow-gpu, CUDA, CUDAnn and python. CUDA is not open source and tensorflow and python are managed by different communities, so are keras and OpenCV. Using a virtual machine always helps since you never know when you may install something wrong until its too late.
- However we did not use one, but the code would work the same, nevertheless. In case you screw up, be prepare to completely reinstall the operating system. In case the error exists even after reinstalling, you may have to reset your BIOS either physically or via the BOOT menu.
+ However we did not use one, but the code would work the same, nevertheless. In case you screw up, be prepare to completely reinstall the operating system. In case the error exists even after reinstalling, you may have to reset your BIOS either physically or via the BOOT menu. 
+ 
+ Also make sure you have the sketch IDE installed for arduino along with the necessary libraries for the orange board which can be downloaded by following the instructions given in this [link](https://kocoafab.cc/obsetup).
 
 Some errors while compiling may just occur due to changing our version of python, opencv, keras. A simple read of the documentation of your softwares would lead you to the code which would work on your system.
 
@@ -51,7 +53,7 @@ We have used the following approach to this problem in order to gain an optimum 
 
 * Try and achieve complete control over the RC car’s throttle and steer through a command line interface or PC control over WiFi using an Arduino board.
 * Attach camera on the car at a suitable position on the car and code it to run simultaneously with the car with minimal lag.
-* Design a track in a way such that it doesn’t challenge the limitations of the car.  
+* Design a track in a way such that it doesn’t challenge the physical limitations of the car.  
 * Use the camera and the car to gain training data for the ML/DL model by driving it ourselves.
 * Find potential models which can be trained with the help of this data.
 * Train model and then test it.
