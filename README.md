@@ -229,6 +229,8 @@ All the essentials will be found in the sub-folders of the **MAIN** folder.
 * You can always save the predicted images and check what went wrong.
 * The various other code files mentioned in **OTHERS** folder are to check if individual steps are working fine and they will be made self-explanatory.
 
+**BEST OF LUCK**
+
 ## Authors
 
 * **[Sudarshan Kamath](https://in.linkedin.com/in/sudarshankamath)** - *Pre-Final year student pursuing B.tech in Mechanical Engineering at the Indian Institute of technology, Guwahati*
