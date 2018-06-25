@@ -129,6 +129,17 @@ all the angles in the left, right directions to one class each and the straight 
 For augmentation purposes we can convert the image from BGR to HSV and change the H, S and V values independently to obtain new images. Although this method did not improve the results on the same track
 we believe that it might help generalise the neural network for any environment, track(even with a colour change).
 
+## The Neural Net
+
+There are multiple approaches to this problem. In an ideal situation, we should use a RNN in order to store temporal features. However, given the short time frame of the project and keeping in mind the 
+slow speed of the car and other hardware limitations, we decided to go with a general feedforward neural network. Currently we have decided to try a simple two layered neural net. 
+We referred to a project by Ryan Zotti, in which he had used a neural net with a single hidden layer to run his car. We decided to try out a neural network with two hidden layers since our task was a bit 
+more complex and also a two layered network can theoretically fit any non-linear function. So we are currently using a neural network with 300, 30 units each in two hidden layers with ReLU activation functions. 
+We have also implemented drop out in order to prevent overfitting. We are still experimenting with the model and trying to find out which one would produce the best results. 
+The aim is to make the model an extremely simple yet efficient one.  
+ 
+All the details of the hyperparameters would be commented in the code. Currently we are achieving an accuracy of above 99% for both or test and train set. However we believe that this might be due to the model overfitting over the test set, since it is a bit similar to the train set.
+
 ## Authors
 
 * **[Sudarshan Kamath](https://in.linkedin.com/in/sudarshankamath)** - *Pre-Final year student pursuing B.tech in Mechanical Engineering at the Indian Institute of technology, Guwahati*
