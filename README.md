@@ -121,6 +121,14 @@ We were able to maneuver the car manually, but these attempts were futile as we 
 positions and intuitively predicting the angles it would take now. **We followed one thumb rule**. If the camera was on the line in the image then we had to go straight, 
 if the camera was to the left, then we take a right and if the camera was to the right then we take a left. We collected around 11,000+ images of data in this manner divided over 3 classes (L, R, S) equally and randomly.
 
+## Data Processing and Augmentation
+
+This included resizing the image according to the corresponding neural network and also cropping some of it to achieve an optimum input. Then we reduced the number of classes to 3 by reducing
+all the angles in the left, right directions to one class each and the straight direction to another class.
+
+For augmentation purposes we can convert the image from BGR to HSV and change the H, S and V values independently to obtain new images. Although this method did not improve the results on the same track
+we believe that it might help generalise the neural network for any environment, track(even with a colour change).
+
 ## Authors
 
 * **[Sudarshan Kamath](https://in.linkedin.com/in/sudarshankamath)** - *Pre-Final year student pursuing B.tech in Mechanical Engineering at the Indian Institute of technology, Guwahati*
