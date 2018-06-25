@@ -16,7 +16,7 @@ pip install x
 Make sure you follow some video tutorial for installing the right combination of tensorflow-gpu, CUDA, CUDAnn and python. CUDA is not open source and tensorflow and python are managed by different communities, so are keras and OpenCV. Using a virtual machine always helps since you never know when you may install something wrong until its too late.
  However we did not use one, but the code would work the same, nevertheless. In case you screw up, be prepare to completely reinstall the operating system. In case the error exists even after reinstalling, you may have to reset your BIOS either physically or via the BOOT menu. 
  
- Also make sure you have the sketch IDE installed for arduino along with the necessary libraries for the orange board which can be downloaded by following the instructions given in these links : [[1]](https://kocoafab.cc/obsetup)  [[2]](https://kocoafab.cc/tutorial/view/649).
+ Also make sure you have the sketch IDE installed for arduino along with the necessary libraries for the orange board which can be downloaded by following the instructions given in these links : [[1]](https://kocoafab.cc/obsetup)  [[2]](https://kocoafab.cc/tutorial/view/649)
 
 Some errors while compiling may just occur due to changing our version of python, opencv, keras. A simple read of the documentation of your softwares would lead you to the code which would work on your system.
 
