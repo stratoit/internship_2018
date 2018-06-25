@@ -182,17 +182,31 @@ Layer 3 :
 
 Layer 4 :
 
+![alt-text](https://github.com/stratoit/internship_2018/blob/master/sides/layer_4.jpg)
+
 Layer 5 :
+
+![alt-text](https://github.com/stratoit/internship_2018/blob/master/sides/layer_5.jpg)
 
 Layer 6 :
 
+![alt-text](https://github.com/stratoit/internship_2018/blob/master/sides/layer_6.jpg)
+
 Layer 7 :
+
+![alt-text](https://github.com/stratoit/internship_2018/blob/master/sides/layer_7.jpg)
 
 Layer 8 :
 
+![alt-text](https://github.com/stratoit/internship_2018/blob/master/sides/layer_8.jpg)
+
 Layer 9 :
 
+![alt-text](https://github.com/stratoit/internship_2018/blob/master/sides/layer_9.jpg)
+
 Layer 10 :
+
+![alt-text](https://github.com/stratoit/internship_2018/blob/master/sides/layer_10.jpg)
 
 ## Authors
 
