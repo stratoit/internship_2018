@@ -61,6 +61,22 @@ We have used the following approach to this problem in order to gain an optimum 
 * If step 6 does not work, then try another model. 
 * The above steps 4 to 7 are repeated until we get a model which gives a proper working for the data we have with least deviation from the followed path.
 
+## Arduino Code
+
+Sketchbook was used to make the code which ran the arduino which provided connectivity with the laptop.
+A client code was written which first connected to the WiFi and then searched for a server with a given IP address. 
+A web server(Listener) was started on the laptop/PC with the same IP address and PORT number. Once connection was established, 
+we could give control commands from the command line to the arduino. Initially an attempt was made to connect with the PC using bluetooth. 
+However connectivity was sketchy and not stable. We used a Jarduino with an inbuilt bluetooth module for the same. We received a lot of 
+garbage values in the bluetooth buffer and a lag in command sending and receiving. Hence we decided to reject it.
+ 
+There was a radio receiver attached to the RC car, which received signals from the remote control and then sent PWM signals to the on-board controller of the car. 
+We removed this radio receiver and used the arduino as a receiver of command line signals. The arduino would then interpret this signals and provide the suitable 
+PWM signals to the steer and throttle control motors. The required values of the PWM signals were first measured with the help of an oscilloscope attached to the radio receiver.   
+The remote control provided an almost continuous range of steer angles and throttle speeds, including the ability to reverse. We decided that we did not 
+require such excessive functionalities in our car for this project. Hence we made it possible to iterate back and forth over a few discrete steer angle values which provided us 
+enough control over the car to make it possible to manually maneuver the car over our track. Based on your requirements you may modify this code slightly to provide more or less control. 
+
 ## Authors
 
 * **[Sudarshan Kamath](https://in.linkedin.com/in/sudarshankamath)** - *Pre-Final year student pursuing B.tech in Mechanical Engineering at the Indian Institute of technology, Guwahati*
