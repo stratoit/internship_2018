@@ -164,7 +164,7 @@ go straight**, but the next sampled image may get predicted correctly. So often 
 Neural nets were seen as a black box until this paper showed a method to understand and visualise them. Although the interpretation of visual feeds to improve the neural network is quite difficult in our case but yet
 we believe that this is a good initiative to understand what is happening inside this black box. Below are the images obtained by visualing the ouputs of the layers of our convolutional neural network in order : 
 
-![alt-text]
+![alt-text](https://github.com/stratoit/internship_2018/blob/master/sides/layer_0.jpg)
 
 ## Authors
 
