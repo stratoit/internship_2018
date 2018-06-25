@@ -138,6 +138,9 @@ We have tried out two different kinds of networks. The first was a fully connect
 the track and on test data. We also found this model difficult to tune. The second was a Convolutional neural network. We found this easier to tune as it had better learning abilities and more layers to experiment with.
 However we are yet to test on various other models for comparison. We are getting very good results using a CNN which improves with increasing the amount of data. We have achieved a consistent accuracy of 93-94% on test and validation data
 using a CNN. 
+
+We decided to try out a CNN with the given structure as mentioned in the code. Before experimenting, we also tried the [VGG-16 net](https://arxiv.org/pdf/1409.1556.pdf). But we thought that it was unneccessarily heavy for our usage and hence we went with a
+simpler CNN but using (3,3) kernels just like the VGG net.
   
 
 ## Authors
