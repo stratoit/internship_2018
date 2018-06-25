@@ -97,6 +97,30 @@ speed commands to the car for ease of usage. You can change this with minute cha
 The CSV file is written over whenever a user steer angle input in provided. We have also ensured that the user is unable to provide steer commands to the wheel after achieving the 
 maximum physically possible steer angles. Currently the lag is almost negligible and the commands are executed instateously.  
 
+## The Track
+
+These are a few important decisions we had to make. Setting up the track such that it is not too simple for the car but also not beyond its physical capability to maneuver required of us
+to test out the car manually on different tracks. For this we set the car at a very low speed and tried to understand the smallest/sharpest turns the car could make.
+Then the track was made with the help of a yellow tape on a green floor. We avoided carpeted floors as the motor had to be set to a high torque value to overcome the static friction 
+and would then pick up high speeds when friction turns kinetic. 
+ 
+The environment was not given a lot of importance as we believe that after achieving our first set of targets and training the network successfully, after some data processing we would be able to feed images 
+from other environments and tracks into our neural net and still achieve a high accuracy. Currently we have tested it out on one more environment and as long as the track is well-lit and yellow
+in color the car seems to follow the track.
+ 
+The camera was placed in front of the car at an angle tilted a bit towards the ground from the horizontal such that the images capture a decent part of the tracks in front and avoids objects which are far away. 
+
+## Data Collection
+
+Our first target was set at making a smart car with the capability to maneuver itself over the same track on which we trained it. We did multiple rounds of data collection. 
+ 
+Trying to drive the car around manually was quite difficult at first, but we made the keyboard keys set to A,S,W,D so that we can control the car just like a 
+car while playing a video game. We also reduced the speed drastically to improve user control.  
+ 
+We were able to maneuver the car manually, but these attempts were futile as we realised that we could create much better quality data by simply holding the car at different 
+positions and intuitively predicting the angles it would take now. We followed one thumb rule. If the camera was on the line in the image then we had to go straight, 
+if the camera was to the left, then we take a right and if the camera was to the right then we take a left. We collected around 11,000+ images of data in this manner divided over 3 classes (L, R, S) equally and randomly.
+
 ## Authors
 
 * **[Sudarshan Kamath](https://in.linkedin.com/in/sudarshankamath)** - *Pre-Final year student pursuing B.tech in Mechanical Engineering at the Indian Institute of technology, Guwahati*
