@@ -161,7 +161,7 @@ go straight**, but the next sampled image may get predicted correctly. So often 
 
 ## Visualising the Neural Net
 
-Neural nets were seen as a black box until this paper showed a method to understand and visualise them. Although the interpretation of visual feeds to improve the neural network is quite difficult in our case but yet
+Neural nets were seen as a black box until [this](https://cs.nyu.edu/~fergus/papers/zeilerECCV2014.pdf) paper showed a method to understand and visualise them. Although the interpretation of visual feeds to improve the neural network is quite difficult in our case but yet
 we believe that this is a good initiative to understand what is happening inside this black box. Below are the images obtained by visualing the ouputs of the layers of our convolutional neural network in order : 
 
 Original image (Zoomed in) :
@@ -211,6 +211,23 @@ Layer 9 :
 Layer 10 :
 
 ![alt-text](https://github.com/stratoit/internship_2018/blob/master/sides/layer_10.jpg)
+
+As you can see the convolutional net learns to isolate the track off very well. We believe that if we add more data as well as augment the current data, the network would learn to generalise over all track environments.
+After the final layer, the image is fed into dense fully connected layers which will learn to make key decisions based on these images and would act as an input to the final soft max layer.
+
+## How to re-create the project
+
+All the essentials will be found in the sub-folders of the **MAIN** folder.
+
+* Load the code in the **ORANGE_BOARD** folder into the arduino after making the necessary adjustments.
+* Run the *REMOTE_SERVER.py* code in the **OTHERS** folder, after making the respective changes as done before.
+* Use the arrow keys to gather data on the track carefully and obtain appropriately sized train and test sets.
+* Use the codes in the **DATA_MANIPULATION** folder to process and resize the data. If required, you can also augment it.
+* Select the appropriate Network from the **NEURAL_NETS** folder and run it for a few epochs at first with the given hyper parameters.
+* Tune the net accordingly! **THIS IS THE MOST DIFFICULT PART. RELY ON INTUITION, BLOGS, VISUALISATION FOR HELP**
+* Gather the saved model files and load them up with the *SMART_CAR.py* file in the **OTHERS** folder and test your car out on track.
+* You can always save the predicted images and check what went wrong.
+* The various other code files mentioned in **OTHERS** folder are to check if individual steps are working fine and they will be made self-explanatory.
 
 ## Authors
 
