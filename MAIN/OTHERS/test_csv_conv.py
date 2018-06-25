@@ -1,3 +1,4 @@
+# This is just like test_csv.py but for convolutional neural networks
 import numpy as np
 import cv2
 import matplotlib.pyplot as plt

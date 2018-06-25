@@ -1,3 +1,6 @@
+# This also helps test the neural net on a validation dataset but instead of calculating the accuracy
+# it displays the images with their respective predictions.
+
 import csv
 import cv2 as cv2
 import numpy as np

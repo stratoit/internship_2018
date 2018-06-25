@@ -1,3 +1,5 @@
+# This helps to load the convolutional neural network and run it on a validation data set
+
 import numpy as np
 import cv2
 import matplotlib.pyplot as plt

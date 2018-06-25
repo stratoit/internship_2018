@@ -129,6 +129,9 @@ all the angles in the left, right directions to one class each and the straight 
 For augmentation purposes we can convert the image from BGR to HSV and change the H, S and V values independently to obtain new images. Although this method did not improve the results on the same track
 we believe that it might help generalise the neural network for any environment, track(even with a colour change).
 
+Before giving these images as input it is **EXTREMELY IMPORTANT** to either divide each pixel's value by 255 after converting the data type to float. Another work around for this is to pre-process
+it like the authors of the VGG network did. This approach has been used by us currently.
+
 ## The Neural Net
 
 There are multiple approaches to this problem. In an ideal situation, we should use a RNN in order to store temporal features. However, given the short time frame of the project and keeping in mind the 
@@ -224,6 +227,7 @@ All the essentials will be found in the sub-folders of the **MAIN** folder.
 * Use the arrow keys to gather data on the track carefully and obtain appropriately sized train and test sets.
 * Use the codes in the **DATA_MANIPULATION** folder to process and resize the data. If required, you can also augment it.
 * Select the appropriate Network from the **NEURAL_NETS** folder and run it for a few epochs at first with the given hyper parameters.
+* Check the results on a validation dataset using the convnet_reader.py file in the **OTHERS** folder.
 * Tune the net accordingly! **THIS IS THE MOST DIFFICULT PART. RELY ON INTUITION, BLOGS, VISUALISATION FOR HELP**
 * Gather the saved model files and load them up with the *SMART_CAR.py* file in the **OTHERS** folder and test your car out on track.
 * You can always save the predicted images and check what went wrong.

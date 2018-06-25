@@ -1,3 +1,7 @@
+// Run this on the arduino just after the server has been setip on your PC
+// Change this accordingly for train and test time - IMPORTANT
+
+
 #include <SPI.h>
 #include "WizFi250.h"
 #include <SoftwareSerial.h>
@@ -89,7 +93,7 @@ void loop()
      else if(val == 9) {ang = 110; Steer.write(ang);}
      else if(val == 8) {speed = speed+1;setSpeed(539 + speed);}             
      else if(val == 0) {speed = speed-1; setSpeed(539 + speed);}
-
+    // Change the above lines during train and test time if necessary
   }
 
   // if the server's disconnected, stop the client

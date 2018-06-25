@@ -1,5 +1,6 @@
 # The data is saved in a CSV fle. The first column of each row is the label while the next x columns are
 # pixel values between 0-255, flattened out. This code helps read a csv and reform the image of appropriate size
+# This file helps load images from a csv to check if they are being stored and labelled correctly
 
 import cv2 as cv2
 import numpy as np

@@ -1,3 +1,5 @@
+# This has been our best convolutional neural network. Activation ReLU also gave similar results.
+
 import numpy as np
 import matplotlib.pyplot as plt
 from keras.models import Sequential

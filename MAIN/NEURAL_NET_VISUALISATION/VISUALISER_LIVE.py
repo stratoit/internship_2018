@@ -1,3 +1,5 @@
+# This provides the ouputs of the hidden CNN layers for live images.
+
 import csv
 import cv2 as cv2
 import numpy as np
@@ -78,7 +80,7 @@ def PREDICT():
 		#data = arr/ 255.0
 		tData=data.reshape(1,45,80,3)
 		
-		output_layer = loaded_model.layers[9].output
+		output_layer = loaded_model.layers[9].output # Change 9 according to which layer's output you want
 		output_fn = TensorFlowTheanoFunction([loaded_model.layers[0].input],output_layer)
 		
 		output_image = output_fn(tData)

@@ -1,3 +1,5 @@
+# This runs the saved neural network and sends predictions to the arduino during test time
+
 # Packages from remote server
 import socket
 import time

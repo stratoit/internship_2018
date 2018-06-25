@@ -1,3 +1,7 @@
+# This is the original VGG-16 net modified for our purpose by reducing the number of classes,
+# the number of dense nodes and the input image size. We did not follow up on this as we got much better results with
+# our custom made neural network
+
 import numpy as np
 from keras.models import Sequential
 from sklearn.preprocessing import LabelEncoder

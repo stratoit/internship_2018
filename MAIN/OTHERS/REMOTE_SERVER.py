@@ -1,4 +1,4 @@
-
+# This is the server and user-controller running on the PC during train data collection time
 import socket
 import time
 import sys

@@ -1,3 +1,5 @@
+# This loads the images stored in a csv file and shows the outputs of the hidden CNN layers for them.
+
 import numpy as np
 import cv2
 import matplotlib.pyplot as plt
@@ -99,9 +101,9 @@ with tf.Session() as sess:
 				feeds[self._inputs[argpos]] = arg
 			return tf.get_default_session().run(self._outputs, feeds)
 		
-	output_layer = loaded_model.layers[1].output
+	output_layer = loaded_model.layers[1].output # 1 plots for layer 1, change according to your use
 	output_fn = TensorFlowTheanoFunction([loaded_model.layers[0].input],output_layer)
-	input_image = trainData[0:1,:,:,:]
+	input_image = trainData[0:1,:,:,:] # Change 0:1 to your desired image in the csv file
 	# plt.imshow(input_image[0,:,:,1])
 	# plt.show()
 	output_image = output_fn(input_image)

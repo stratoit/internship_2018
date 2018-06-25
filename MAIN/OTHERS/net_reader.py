@@ -1,3 +1,4 @@
+# This code helps load the FCC neural network and test it on a validation dataset
 import numpy as np
 from keras.models import model_from_yaml
 from sklearn import preprocessing

@@ -1,3 +1,5 @@
+# This was the dense neural network which gave us the best results. 
+
 import numpy as np
 from keras.models import model_from_yaml
 
