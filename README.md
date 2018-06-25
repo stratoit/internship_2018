@@ -159,6 +159,13 @@ Accuracy may often be a wrong measure of how well the car drives. When we run th
 go straight**, but the next sampled image may get predicted correctly. So often these wrong predictions are not noticable and hence would not affect your application. 
 * Random splitting and shuffling the train-test data often leads to slightly different accuracies in different experiments. This it possible for us to only give an approxiamte measure of accuracy.
 
+## Visualising the Neural Net
+
+Neural nets were seen as a black box until this paper showed a method to understand and visualise them. Although the interpretation of visual feeds to improve the neural network is quite difficult in our case but yet
+we believe that this is a good initiative to understand what is happening inside this black box. Below are the images obtained by visualing the ouputs of the layers of our convolutional neural network in order : 
+
+![alt-text]
+
 ## Authors
 
 * **[Sudarshan Kamath](https://in.linkedin.com/in/sudarshankamath)** - *Pre-Final year student pursuing B.tech in Mechanical Engineering at the Indian Institute of technology, Guwahati*
