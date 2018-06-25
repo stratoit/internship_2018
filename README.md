@@ -141,7 +141,23 @@ using a CNN.
 
 We decided to try out a CNN with the given structure as mentioned in the code. Before experimenting, we also tried the [VGG-16 net](https://arxiv.org/pdf/1409.1556.pdf). But we thought that it was unneccessarily heavy for our usage and hence we went with a
 simpler CNN but using (3,3) kernels just like the VGG net.
-  
+
+We have experimented with 3 different activation functions. Sigmoid gave a high bias and the features were not learnt easily. ReLU converged quickly combined with a learning rate of 0.001. A higher learning rate
+made the CNN overshoot the minima while a lower learning rate was found to help the model easily overfit the train data. Hence we used this value. The 3rd activation function was ELU which also provided similar results
+as ReLU taking alpha as 0.1, 1. 
+
+The image input size was cropped and reduced to 45 * 80 * 3. Anything smaller was not providing enough data, while a larger image only got in unnecessary information about the environment and the track.
+
+In order to prevent overfitting we tried to first use Dropout but the model was found very difficult to train and generalise. L2 regularisation worked better in our case.
+
+All the above statements might appear quite vague but this is because we are still in the phase of testing and improvement. Also there are a few things to keep in mind while considering the above statements :
+
+* The network we used **may not be the best** network, but it works pretty well for our cause.
+* The train, test and validation sets' accuracy may often be unrelated to the way the car steers over the track. This depends on a lot of factors like how fast the car is able to get the image
+and process the data and predict a class, how fast the car physically steers, the differences in the images formed at different speeds etc. Also we believe that if we can obtain more data we can drastically improve the results.
+Accuracy may often be a wrong measure of how well the car drives. When we run the neural net at a very fast sampling rate, then sometimes an image with the camera **just to the right** of the track may get a command **to
+go straight**, but the next sampled image may get predicted correctly. So often these wrong predictions are not noticable and hence would not affect your application. 
+* Random splitting and shuffling the train-test data often leads to slightly different accuracies in different experiments. This it possible for us to only give an approxiamte measure of accuracy.
 
 ## Authors
 
