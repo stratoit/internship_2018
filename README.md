@@ -78,6 +78,12 @@ The remote control provided an almost continuous range of steer angles and throt
 require such excessive functionalities in our car for this project. Hence we made it possible to iterate back and forth over a few discrete steer angle values which provided us 
 enough control over the car to make it possible to manually maneuver the car over our track. Based on your requirements you may modify this code slightly to provide more or less control.
 
+## Arduino Circuit Diagram
+
+A representation of the arduino circuit used for control is shown below for ease of visualisation :
+
+![alt-text](https://github.com/stratoit/internship_2018/blob/master/sides/ARD.jpg)
+
 ## Python Code for Data Collection
 
 The python code simulates a TCP web server for the client to connect to at the IP address and host port mentioned in the code. 

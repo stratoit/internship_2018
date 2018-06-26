@@ -1,7 +1,3 @@
-// Run this on the arduino just after the server has been setip on your PC
-// Change this accordingly for train and test time - IMPORTANT
-
-
 #include <SPI.h>
 #include "WizFi250.h"
 #include <SoftwareSerial.h>
@@ -11,7 +7,7 @@ int out1 = 9;
 int out2 = 10;
 String val1;
 int val=0;
-int speed =0;
+int speed =538,n=8;
 int ang =70;
 char c;
 int count=0;
@@ -19,16 +15,30 @@ SoftwareSerial mySerial(3, 2); // RX, TX
 
 Servo Throttle, Steer;
 
+//RPM
+const int ledPin = 13;//the led attach to pin13
+int sensorPin = A0; // select the input pin for the potentiometer
+int digitalPin=7; //D0 attach to pin7
+long rpm=0;
+
+int sensorValue = 0;// variable to store the value coming from A0
+boolean digitalValue=0, prevdigitalValue=0;// variable to store the value coming from pin7
+
+unsigned long t=0,cur_t,t1=0,t2=0,t3=0,t4=0;//time variables
+unsigned long t5=0;
+//RPM
+//int rpm_int=0;
+long rpm_int=0;
 void setSpeed(int speed){
     int angle = map(speed, 0, 1000, 0, 180); //Sets servo positions to different speeds
     Throttle.write(angle);
     }
 
-char ssid[] = "Protec";    // your network SSID (name)
-char pass[] = "protec1234";          // your network password
+char ssid[] = "stratoit2";    // your network SSID (name)
+char pass[] = "strato1010";          // your network password
 int status = WL_IDLE_STATUS;       // the Wifi radio's status
 
-char server[] = "192.168.201.31";
+char server[] = "192.168.0.10";
 
 // Initialize the Ethernet client object
 WiFiClient client;
@@ -43,6 +53,11 @@ void setup()
   mySerial.begin(115200); //Changed
   Throttle.attach(10); //Adds ESC to certain pin. arm();
   Steer.attach(9); 
+
+  // RPM
+  pinMode(digitalPin,INPUT);//set the state of D0 as INPUT
+  pinMode(ledPin,OUTPUT);//set the state of pin13 as OUTPUT
+  //RPM
   
   WiFi.init();
 
@@ -72,28 +87,40 @@ void setup()
     if (client.connect(server, 8888)) {
       Serial.println("Connected to server");
       // Make a HTTP request
-    
     }
 }
 
-
-
+int step = 0;
 void loop()
 {
+  cur_t=micros()/1000;
+ 
+  // pid
+  if(cur_t-t5 > 200) {
+
+    double outval = speed + 5.0 * sin(360/n*step);
+    step++;
+    step%=n;
+
+    setSpeed((int)outval);
+    t5 = cur_t;  
+  }
+
+
+
+
   while (client.available()) {
      c = client.read();
      val1=c;  
      val = atoi(val1.c_str());
-     Serial.print(val);
-     Serial.println("");
-     count+=1;
-     Serial.println(count);
      if(val == 3) {ang = 30; Steer.write(ang);}
-     else if(val == 6) {ang = 70; Steer.write(ang);}
-     else if(val == 9) {ang = 110; Steer.write(ang);}
-     else if(val == 8) {speed = speed+1;setSpeed(539 + speed);}             
-     else if(val == 0) {speed = speed-1; setSpeed(539 + speed);}
-    // Change the above lines during train and test time if necessary
+     else if(val == 6) {ang=70;Steer.write(ang);}
+     else if(val == 9) {ang=100;Steer.write(ang);}
+     else if(val == 4) {n-=1;}
+     else if(val == 5) {n+=1;}
+     else if(val == 2) {setSpeed(535);break;}
+     else if(val == 8) {speed+=1;}
+     else if(val == 0) {speed-=1;}
   }
 
   // if the server's disconnected, stop the client
