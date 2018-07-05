@@ -243,6 +243,14 @@ All the essentials will be found in the sub-folders of the **MAIN** folder.
 
 **BEST OF LUCK**
 
+## Projection Extension
+
+We were unable to control the speed using a hall sensor with PID control. We hence gave a sinusoidal waveform as input
+to control the torque. In a later extension of the project we added 5 classes and changed the position of the 
+camera to take images just below the car. Here is an image of the new modifications to the car :
+
+![alt-text](https://github.com/stratoit/internship_2018/blob/master/sides/NEW_CAR.jpg)
+
 ## Contributors
 
 * **[Sudarshan Kamath](https://in.linkedin.com/in/sudarshankamath)** - *Pre-Final year student pursuing B.tech in Mechanical Engineering at the Indian Institute of technology, Guwahati*
