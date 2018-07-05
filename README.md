@@ -251,6 +251,10 @@ camera to take images just below the car. Here is an image of the new modificati
 
 ![alt-text](https://github.com/stratoit/internship_2018/blob/master/sides/NEW_CAR.jpg)
 
+The metal rod in front was used to judge how far the center of the track is from the center of
+the camera. The camera is set at such an height that it can view over a much smaller area thus we need to
+train over a lot lesser data since most of the data looks similar beyond a point. More info on this is given in the **UPDATEv1.0** folder..
+
 ## Contributors
 
 * **[Sudarshan Kamath](https://in.linkedin.com/in/sudarshankamath)** - *Pre-Final year student pursuing B.tech in Mechanical Engineering at the Indian Institute of technology, Guwahati*
