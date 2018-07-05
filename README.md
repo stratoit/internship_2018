@@ -253,7 +253,7 @@ camera to take images just below the car. Here is an image of the new modificati
 
 The metal rod in front was used to judge how far the center of the track is from the center of
 the camera. The camera is set at such an height that it can view over a much smaller area thus we need to
-train over a lot lesser data since most of the data looks similar beyond a point. More info on this is given in the **UPDATEv1.0** folder..
+train over a lot lesser data since most of the data looks similar beyond a point. More info on this is given in the **UPDATEv1.0** folder.
 
 ## Contributors
 
