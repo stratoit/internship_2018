@@ -1,7 +1,9 @@
-# SELF DRIVING VEHICLE USING DEEP NEURAL NETWORKS
+The following repository is controlled by **[Strato-IT](https://stratoitkorea.com)** and was created under the
+the direction of **Mr. Younghyo Kim, CEO, Strato-IT** by interns during the period of May to July 2018.
+
+## SELF DRIVING VEHICLE USING DEEP NEURAL NETWORKS
 
 This project is an attempt to make a line follower car which can be controlled through a neural network running remotely on a PC. The aim is to make the car usable over all lines and surfaces.
-This project was created in the months of May to July 2018, as a part of our internship at Strato-IT.
  We would also be describing the difficulties that we faced and the mistakes that you could make and hence should be on the lookout for. 
  In the end, we would be describing the results and would also provide a few points for improvement 
  in our project. 
