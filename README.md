@@ -1,5 +1,7 @@
+
 The following repository is controlled by **[Strato-IT](https://stratoitkorea.com)** and was created under the
-the direction of **Mr. Younghyo Kim, CEO, Strato-IT** by interns during the period of May to July 2018.
+the direction of **Mr. Younghyo Kim, CEO, Strato-IT** during the period of May to July 2018. This repository was
+created by interns in order to explore the practical applications of Machine Learning.
 
 ## SELF DRIVING VEHICLE USING DEEP NEURAL NETWORKS
 
