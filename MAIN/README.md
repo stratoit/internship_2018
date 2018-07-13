@@ -8,6 +8,6 @@
 
 **ORANGE_BOARD** - This contains the arduino code for the orange board arduino with inbuilt wifi module.
 
-**OTHERS** -  This folder contains most of the code for reading, writing from/to csv files; loading saved neural nets, testing neural nets on new data; the web server integrated with a real time neural network and much more.
+**OTHERS** -  This folder contains most of the code for reading, writing from/to csv files for test/train data collection; loading saved neural nets, testing neural nets on new data; the web server integrated with a real time neural network and much more.
 
 In the folders without a README, the code files have been commented thoroughly to make them self-explanatory.

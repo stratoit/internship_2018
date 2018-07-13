@@ -1,4 +1,4 @@
-# Remote server code with necessary changes made 
+# Remote server code with necessary changes made (TRAIN DATA COLLECTION)
 import socket
 import time
 import sys
